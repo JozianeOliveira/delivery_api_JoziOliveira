@@ -1,0 +1,25 @@
+package com.deliverytech.delivery_api_JoziOliveira.entity;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import java.util.List;
+
+@Entity
+@Data
+public class Restaurante {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String telefone;
+    private String endereco;
+    private boolean ativo;
+
+    @OneToMany(mappedBy = "restaurante")
+    private List<Pedido> pedidos;
+
+    @OneToMany(mappedBy = "restaurante")
+    private List<Pedido> produtos;
+
+}
