@@ -7,7 +7,6 @@ import java.util.List;
 @Entity
 @Data
 public class Cliente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,8 +15,8 @@ public class Cliente {
     private String telefone;
     private String endereco;
     private boolean ativo;
-
+ 
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos;
-
+ 
 }
