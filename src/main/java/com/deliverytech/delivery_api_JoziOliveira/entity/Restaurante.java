@@ -3,11 +3,10 @@ package com.deliverytech.delivery_api_JoziOliveira.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
-
+ 
 @Entity
 @Data
 public class Restaurante {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,11 +16,11 @@ public class Restaurante {
     private String endereco;
     private String categoria;
     private boolean ativo;
-
-    @OneToMany(mappedBy = "restaurante")
-    private List<Pedido> pedidos;
-
-    @OneToMany(mappedBy = "restaurante")
-    private List<Pedido> produtos;
-
+ 
+   @OneToMany(mappedBy = "restaurante")
+   private List<Pedido>pedidos;
+ 
+   @OneToMany(mappedBy = "restaurante")
+   private List<Pedido> produtos;
+ 
 }
