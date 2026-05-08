@@ -12,8 +12,10 @@ public class Restaurante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    private String email;
     private String telefone;
     private String endereco;
+    private String categoria;
     private boolean ativo;
 
     @OneToMany(mappedBy = "restaurante")
