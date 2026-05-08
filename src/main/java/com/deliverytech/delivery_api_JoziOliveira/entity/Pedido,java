@@ -1,0 +1,22 @@
+import jakarta.persistence.*;
+import lombok.Data;
+import java.util.List;
+
+@Entity
+@Data
+public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private LocalDataTime dataPedido;
+    private bolean entrega;
+    private BigDecimal SubTotal;
+    private BigDecimal taxaEntrega;
+    private BigDecimal valorTotal;
+    private boolean ativo;
+
+    @OneToMany(mappedBy = "pedidos")
+    private List<Pedido> pedidos;
+
+}
