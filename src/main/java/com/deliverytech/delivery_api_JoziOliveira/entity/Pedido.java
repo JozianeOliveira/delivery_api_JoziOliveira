@@ -11,27 +11,28 @@ import com.deliverytech.delivery_api_JoziOliveira.enums.StatusPedido;
 @Entity
 @Data
 public class Pedido {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private LocalDateTime dataPedido;
-    private Boolean entrega;
-    private BigDecimal subTotal;
-    private BigDecimal taxaEntrega;
-    private BigDecimal valorTotal;
- 
-    @Enumerated(EnumType.STRING)
-    private StatusPedido status;
- 
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
- 
-    @ManyToOne
-    @JoinColumn(name = "restaurante_id")
-    private Restaurante restaurante;
- 
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
-    private List<ItemPedido> itens;
- 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private LocalDateTime dataPedido;
+	private Boolean entrega;
+	private BigDecimal subTotal;
+	private BigDecimal taxaEntrega;
+	private BigDecimal valorTotal;
+	private String numeroPedido;
+
+	@Enumerated(EnumType.STRING)
+	private StatusPedido status;
+
+	@ManyToOne
+	@JoinColumn(name = "cliente_id")
+	private Cliente cliente;
+
+	@ManyToOne
+	@JoinColumn(name = "restaurante_id")
+	private Restaurante restaurante;
+
+	@OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
+	private List<ItemPedido> itens;
+
 }
