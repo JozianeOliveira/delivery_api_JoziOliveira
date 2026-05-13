@@ -2,8 +2,10 @@ package com.deliverytech.delivery_api_JoziOliveira.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.math.BigDecimal;
 import java.util.List;
- 
+
 @Entity
 @Data
 public class Restaurante {
@@ -16,11 +18,14 @@ public class Restaurante {
     private String endereco;
     private String categoria;
     private boolean ativo;
- 
+    private Integer avaliacao;
+
+    private BigDecimal taxaEntrega;
+
    @OneToMany(mappedBy = "restaurante")
    private List<Pedido>pedidos;
- 
+
    @OneToMany(mappedBy = "restaurante")
    private List<Pedido> produtos;
- 
+
 }
