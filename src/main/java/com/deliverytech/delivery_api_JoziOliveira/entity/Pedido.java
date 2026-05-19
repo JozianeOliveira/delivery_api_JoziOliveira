@@ -2,12 +2,13 @@ package com.deliverytech.delivery_api_JoziOliveira.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
- 
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+
 import com.deliverytech.delivery_api_JoziOliveira.enums.StatusPedido;
- 
+
 @Entity
 @Data
 public class Pedido {
@@ -20,6 +21,7 @@ public class Pedido {
 	private BigDecimal taxaEntrega;
 	private BigDecimal valorTotal;
 	private String numeroPedido;
+	private String enderecoEntrega;
 
 	@Enumerated(EnumType.STRING)
 	private StatusPedido status;
